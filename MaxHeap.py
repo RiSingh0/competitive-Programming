@@ -7,13 +7,13 @@ class MaxHeap:
     def pushUp(self,ind):
         try:
             #Till child is Greater
-            while self.heap[ind] > self.heap[ind//2]:
+            while self.heap[ind] > self.heap[(ind - 1)//2] and (ind-1)//2 >= 0:
                 
                 #swap current node with parent
-                self.heap[ind], self.heap[ind//2] = self.heap[ind//2], self.heap[ind]
+                self.heap[ind], self.heap[(ind - 1)//2] = self.heap[(ind - 1)//2], self.heap[ind]
                 
                 #now current node at parent index
-                ind=ind//2
+                ind=(ind - 1 )//2
         except:
             pass
         
@@ -82,6 +82,8 @@ my.insert(15)
 my.insert(70)
 my.insert(20)
 my.insert(100)
+my.insert(110)
+print(my.heap)
 print(my.remove())
 print(my.remove())
 print(my.remove())

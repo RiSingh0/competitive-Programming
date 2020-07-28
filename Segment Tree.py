@@ -12,7 +12,6 @@ class STree:
     def __init__(self,arr):
         #size
         self.arr_size = len(arr)-1
-        
         #Till depth
         height=ceil(log(self.arr_size+1,2))
         #N*N -1
@@ -81,10 +80,4 @@ class STree:
             self.help_Update(start, mid, update_ind, diff, curr_ind*2 +1)
             self.help_Update(mid+1, end, update_ind, diff, curr_ind*2 +2)
             
-arr = [10, 11, 45, 89, 95]
-print(arr)
-st=STree(arr)
-print(st.ST)
-print(st.search_Query(2,4))
-st.update_Query(arr,3,5)
-print(st.search_Query(2,4))
+
